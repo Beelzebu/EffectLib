@@ -89,7 +89,7 @@ public class DynamicLocation {
 
     protected Location getEntityLocation(Entity entity) {
         if (entity instanceof LivingEntity) {
-            return ((LivingEntity) entity).getEyeLocation();
+            return ((LivingEntity) entity).getLocation();
         }
         return entity.getLocation();
     }
