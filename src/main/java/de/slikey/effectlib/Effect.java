@@ -2,13 +2,11 @@ package de.slikey.effectlib;
 
 import de.slikey.effectlib.util.DynamicLocation;
 import de.slikey.effectlib.util.ParticleEffect;
-import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
 
 public abstract class Effect implements Runnable {
@@ -410,8 +408,8 @@ public abstract class Effect implements Runnable {
         return period;
     }
     
-    public void setEntity(Entity entity) {
-        origin = new DynamicLocation(entity);
+    public void setEntity(Entity entity, boolean eyeLocation) {
+        origin = new DynamicLocation(entity, eyeLocation);
     }
 
     public void setLocation(Location location) {
@@ -419,7 +417,7 @@ public abstract class Effect implements Runnable {
     }
 
     public void setTargetEntity(Entity entity) {
-        target = new DynamicLocation(entity);
+        target = new DynamicLocation(entity, false);
     }
 
     public void setTargetLocation(Location location) {
