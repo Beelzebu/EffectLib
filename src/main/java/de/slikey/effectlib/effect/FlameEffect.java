@@ -9,6 +9,8 @@ import org.bukkit.Location;
 import org.bukkit.util.Vector;
 
 public class FlameEffect extends Effect {
+    
+    public ParticleEffect particle = ParticleEffect.FLAME;
 
     public FlameEffect(EffectManager effectManager) {
         super(effectManager);
@@ -24,7 +26,7 @@ public class FlameEffect extends Effect {
             Vector v = RandomUtils.getRandomCircleVector().multiply(RandomUtils.random.nextDouble() * 0.6d);
             v.setY(RandomUtils.random.nextFloat() * 1.8);
             location.add(v);
-            ParticleEffect.FLAME.display(location, visibleRange);
+            particle.display(location, visibleRange);
             location.subtract(v);
         }
     }
